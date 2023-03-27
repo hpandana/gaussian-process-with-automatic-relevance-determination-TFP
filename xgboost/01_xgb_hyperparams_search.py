@@ -18,7 +18,7 @@ gscv= GridSearchCV(
     'max_depth': [1, 2, 3, 6, 10],
     'learning_rate': [0.02, 0.05, 0.1, 0.3], #eta
     'subsample': [0.1, 0.3, 0.5, 0.8],
-    'colsample_bytree': [0.4, 0.7, 1.0],                         
+    'colsample_bytree': [0.4, 0.7, 1.0],
   },
   scoring='neg_root_mean_squared_error', 
   cv=5,

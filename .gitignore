@@ -1,0 +1,6 @@
+.ipynb_checkpoints/
+__pycache__/
+gp*stdout.txt
+gp*.csv
+*.exe
+*.hpp

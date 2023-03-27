@@ -39,7 +39,7 @@ class GPR:
       self.observation_noise_variance_prior = observation_noise_variance_prior
     
     def build_gp(amplitude, length_scale, observation_noise_variance):
-      kernel = tfk.FeatureScaled(tfk.ExponentiatedQuadratic(amplitude), scale_diag=tf.math.sqrt(length_scale) )
+      kernel = tfk.FeatureScaled(tfk.ExponentiatedQuadratic(amplitude), scale_diag=length_scale )
 
       return tfd.GaussianProcess(
         kernel=kernel,
@@ -109,7 +109,7 @@ class GPR:
 
     batch_of_posterior_kernels = tfk.FeatureScaled(
       tfk.ExponentiatedQuadratic(amplitude_samples),
-      scale_diag= tf.math.sqrt(length_scale_samples)
+      scale_diag= length_scale_samples,
     )
 
     # The batch of kernels creates a batch of GP predictive models, one for each posterior sample.
